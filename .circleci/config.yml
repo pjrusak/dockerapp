@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: /dockerapp
     docker:
-      - image: docker:18.04.0-ce
+      - image: docker:18.04.0-ce-git
     steps:
       - checkout
       - setup_remote_docker
