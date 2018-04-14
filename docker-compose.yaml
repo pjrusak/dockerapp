@@ -6,6 +6,16 @@ services:
       - "5000:5000"
     depends_on:
       - redis
+    networks:
+      - my_net
   redis:
     image: redis:4.0.9
+    networks:
+      - my_net
 
+networks:
+  my_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.1.0/24
